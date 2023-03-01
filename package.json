@@ -1,5 +1,5 @@
 {
-  "name": "my-new-project",
+  "name": "ecommerce-webdriverio-project",
   "type": "module",
   "devDependencies": {
     "@wdio/cli": "^8.4.0",
