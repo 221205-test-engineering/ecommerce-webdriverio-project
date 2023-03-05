@@ -33,9 +33,9 @@ When(/^User clicks navbar cart icon$/, async () => {
 });
 
 Then(/^User can see all the products$/, async () => {
-  await OpenPage.productCollection.forEach((element) => {
-    console.log(element.getText());
-  });
+  const size = await OpenPage.productCollection.length;
+  expect(size > 0);
+  console.log("Number of products seen in the page: ", size);
 });
 
 Then(/^Page color can change to dark or white$/, async () => {
@@ -45,13 +45,20 @@ Then(/^Page color can change to dark or white$/, async () => {
 });
 
 Then(/^User can land in registration page$/, async () => {
-  console.log(RegistrationPage.registrationTitle);
+  // await expect(browser).toHaveTitleContaining("Congo");
+  await RegistrationPage.open();
+  const text = await RegistrationPage.registrationTitle.getText();
+  expect(text === "Sign up");
 });
 
 Then(/^User can land in SignIn page$/, async () => {
-  console.log(LoginPage.signinTitle);
+  await LoginPage.open();
+  const text = await LoginPage.signinTitle.getText();
+  expect(text === "Sign in");
 });
 
 Then(/^User can land in YOUR BAG page$/, async () => {
-  console.log(CartPage.cartHeader);
+  await CartPage.open();
+  const text = await CartPage.cartHeader.getText();
+  expect(text === "YOUR BAG");
 });

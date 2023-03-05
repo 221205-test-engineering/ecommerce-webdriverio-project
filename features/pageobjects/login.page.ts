@@ -1,6 +1,6 @@
-import { ChainablePromiseElement } from "webdriverio";
+// import { ChainablePromiseElement } from "webdriverio";
 
-import OpenPage from "./open.page.js";
+// import OpenPage from "./open.page.js";
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -9,6 +9,10 @@ class LoginPage {
   /**
    * define selectors using getter methods
    */
+  public open() {
+    return browser.url("http://localhost:3000/login");
+  }
+
   public get inputUsername() {
     return $("#username");
   }
@@ -34,11 +38,11 @@ class LoginPage {
   /**
    * overwrite specific options to adapt it to page object
    */
-  public open() {
-    return open("login");
+  public get signinButton() {
+    return $("login");
   }
-  public signinTitle() {
-    return $("h1=Sign in");
+  public get signinTitle() {
+    return $("//*[@id='root']/main/div/h1");
   }
 }
 

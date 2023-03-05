@@ -1,9 +1,10 @@
-import { ChainablePromiseElement } from "webdriverio";
-
 class RegistrationPage {
+  public open() {
+    browser.url("http://localhost:3000/register");
+  }
   //Registration page title locator
-  public registrationTitle() {
-    return $('//*[@id="root"]/div[2]/h1');
+  public get registrationTitle() {
+    return $('//*[@id="root"]/main/div/h1');
   }
 }
 export default new RegistrationPage();

@@ -1,5 +1,3 @@
-import { ChainablePromiseElement } from "webdriverio";
-
 class OpenPage {
   /**
    * Opens a sub page of the page
@@ -26,7 +24,7 @@ class OpenPage {
   }
   // Cart icon locator in the opening page
   public get cart() {
-    return $("<path />");
+    return $(".MuiBadge-root");
   }
   // Main search icon locator in the opening page
   public get searchIcon() {
@@ -50,7 +48,7 @@ class OpenPage {
   }
   // Collection of products in the opening page
   public get productCollection() {
-    return $$('//div[@class = "sc-himrzO bFLTLJ"]');
+    return $$('//*[@id="root"]/div[3]/div');
   }
 }
 export default new OpenPage();
