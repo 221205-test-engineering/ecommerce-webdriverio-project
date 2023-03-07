@@ -12,7 +12,7 @@ class OpenPage {
   }
   // Day Night Icon locator in the opening page
   public get dayNight() {
-    return $('//input[@type = "checkbox"]');
+    return $("//span[@class='MuiIconButton-label']");
   }
   // User register  locator in the opening page
   public get register() {
@@ -22,7 +22,7 @@ class OpenPage {
   public get signIn() {
     return $("strong=SIGN IN");
   }
-  // Cart icon locator in the opening page
+  // Cart icon locator in the Navbar
   public get cart() {
     return $(".MuiBadge-root");
   }

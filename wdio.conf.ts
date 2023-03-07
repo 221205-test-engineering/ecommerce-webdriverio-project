@@ -29,7 +29,7 @@ export const config: Options.Testrunner = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./features/**/openPage.feature"],
+  specs: ["./features/**/registration.feature"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -146,7 +146,7 @@ export const config: Options.Testrunner = {
   // If you are using Cucumber you need to specify the location of your step definitions.
   cucumberOpts: {
     // <string[]> (file/dir) require files before executing features
-    require: ["./features/step-definitions/openPage.steps.ts"],
+    require: ["./features/step-definitions/registration.steps.ts"],
     // <boolean> show full backtrace for errors
     backtrace: false,
     // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)

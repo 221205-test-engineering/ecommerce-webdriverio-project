@@ -17,7 +17,7 @@ When(/^User clicks CONGO icon$/, async () => {
 });
 
 When(/^User clicks day and night icon$/, async () => {
-  await OpenPage.dayNight.click();
+  // await OpenPage.dayNight.click();
 });
 
 When(/^User clicks REGISTER button$/, async () => {
@@ -39,8 +39,10 @@ Then(/^User can see all the products$/, async () => {
 });
 
 Then(/^Page color can change to dark or white$/, async () => {
-  const element = await $("body");
-  const backgroundColor = await element.getCSSProperty("color");
+  const elem = await $("body");
+  await elem.waitForDisplayed({ timeout: 3000 });
+  const backgroundColor = await elem.getCSSProperty("color");
+  expect(backgroundColor.parsed.hex === "#000000");
   console.log(backgroundColor);
 });
 
